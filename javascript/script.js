@@ -8,9 +8,15 @@ const dialogTime = document.querySelector("#dialogTime");
 const dialogPeriod = document.querySelector("#dialogPeriod");
 const mainContainer = document.querySelector("#mainContainer");
 const addTask = document.querySelector("#addTask");
+const longDate = document.querySelector("#longDate");
+const shortDate = document.querySelector("#shortDate");
 
+const now = dayjs();
 let currentMode;
 let target;
+
+shortDate.textContent = now.format("dddd");
+longDate.textContent = now.format("MMMM DD YYYY");
 
 addButton.addEventListener("click", () => {
   addDialog.classList.add("visibility");
