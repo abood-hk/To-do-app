@@ -32,17 +32,24 @@ button {
   transition: background-color 0.2s;
   font-size: 16px;
 }
-#removeButton {
+.removeButton {
   background-color: #ef4444;
   margin-right: 10px;
 }
-#removeButton:hover {
+.removeButton:hover {
   background-color: #dc2626;
 }
-#modifyButton {
+#formRemoveButton {
+  background-color: #ef4444;
+  margin-right: 10px;
+}
+#formRemoveButton:hover {
+  background-color: #dc2626;
+}
+.modifyButton {
   background-color: #3b82f6;
 }
-#modifyButton:hover {
+.modifyButton:hover {
   background-color: #2563eb;
 }
 #addButton {
@@ -51,6 +58,14 @@ button {
   align-content: center;
 }
 #addButton:hover {
+  background-color: #16a34a;
+}
+#formAddButton {
+  background-color: #22c55e;
+  text-align: center;
+  align-content: center;
+}
+#formAddButton:hover {
   background-color: #16a34a;
 }
 #addTask {
@@ -66,7 +81,7 @@ button {
   justify-self: end;
   margin-right: 17px;
 }
-#taskContainer {
+.taskContainer {
   border-top: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -74,14 +89,6 @@ button {
 #buttons {
   justify-self: end;
   align-content: center;
-}
-#addDialog {
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  background-color: #3e2121;
-  padding: 28px 22px;
-  display: none;
 }
 #dialogButtons {
   text-align: center;
@@ -97,13 +104,40 @@ button {
 }
 select {
   font-size: 16px;
+  height: 25px;
 }
-.visibility {
+#addButton {
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#addDialog {
+  display: none;
+  position: absolute;
+  top: 34%;
+  left: 24%;
+  background-color: #1a1a1a;
+  padding: 78px 42px;
+  z-index: 10;
+}
+#addDialog.visibility {
   display: block;
 }
-.overlay {
+#js-overlay {
+  display: none;
+}
+
+#js-overlay.overlay {
+  display: block;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
 }

@@ -23,34 +23,34 @@
           <h2>April 24th 2025</h2>
         </div>
       </div>
-      <div id="taskContainer">
+      <div class="taskContainer">
         <div id="task">
           <h3>build a castle</h3>
           <p>10pm</p>
         </div>
         <div id="buttons">
-          <button id="removeButton" type="button">Remove</button>
-          <button id="modifyButton" type="button">Modify</button>
+          <button class="removeButton" type="button">Remove</button>
+          <button class="modifyButton" type="button">Modify</button>
         </div>
       </div>
-      <div id="taskContainer">
+      <div class="taskContainer">
         <div id="task">
           <h3>Learn Spanish</h3>
           <p>12pm</p>
         </div>
         <div id="buttons">
-          <button id="removeButton" type="button">Remove</button>
-          <button id="modifyButton" type="button">Modify</button>
+          <button class="removeButton" type="button">Remove</button>
+          <button class="modifyButton" type="button">Modify</button>
         </div>
       </div>
-      <div id="taskContainer">
+      <div class="taskContainer">
         <div id="task">
           <h3>Read a Book</h3>
           <p>8am</p>
         </div>
         <div id="buttons">
-          <button id="removeButton" type="button">Remove</button>
-          <button id="modifyButton" type="button">Modify</button>
+          <button class="removeButton" type="button">Remove</button>
+          <button class="modifyButton" type="button">Modify</button>
         </div>
       </div>
       <div id="addTask">
@@ -60,15 +60,16 @@
     <form id="addDialog">
       <input placeholder="Learn Spanish" id="dialogTask" type="text" />
       <input placeholder="5" id="dialogTime" type="text" />
-      <select>
+      <select id="dialogPeriod">
         <option>PM</option>
         <option>AM</option>
       </select>
       <div id="dialogButtons">
-        <button id="removeButton">Cancel</button>
-        <button id="addButton">Add task</button>
+        <button id="formRemoveButton">Cancel</button>
+        <button id="formAddButton">Add task</button>
       </div>
     </form>
+
     <script src="/javascript/script.js"></script>
   </body>
 </html>
