@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Roboto;
+}
+#mainContainer {
+  background-color: #1e1e1e;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 80%;
+  justify-self: center;
+  margin-top: 10vh;
+  border: 1px solid #2a2a2a;
+  border-radius: 7px;
+  padding: 20px 30px 30px 30px;
+}
+p {
+  color: #b0b0b0;
+  margin-top: -4px;
+}
+h3 {
+  font-size: 19px;
+}
+button {
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 16px;
+}
+#removeButton {
+  background-color: #ef4444;
+  margin-right: 10px;
+}
+#removeButton:hover {
+  background-color: #dc2626;
+}
+#modifyButton {
+  background-color: #3b82f6;
+}
+#modifyButton:hover {
+  background-color: #2563eb;
+}
+#addButton {
+  background-color: #22c55e;
+  text-align: center;
+  align-content: center;
+}
+#addButton:hover {
+  background-color: #16a34a;
+}
+#addTask {
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 21px;
+}
+#date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#exactDate {
+  justify-self: end;
+  margin-right: 17px;
+}
+#taskContainer {
+  border-top: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#buttons {
+  justify-self: end;
+  align-content: center;
+}
+#addDialog {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  background-color: #3e2121;
+  padding: 28px 22px;
+  display: none;
+}
+#dialogButtons {
+  text-align: center;
+  margin-top: 20px;
+}
+#dialogTask {
+  font-size: 16px;
+  width: 250px;
+}
+#dialogTime {
+  font-size: 16px;
+  width: 50px;
+}
+select {
+  font-size: 16px;
+}
+.visibility {
+  display: block;
+}
+.overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
