@@ -8,16 +8,25 @@ const dialogTime = document.querySelector("#dialogTime");
 const dialogPeriod = document.querySelector("#dialogPeriod");
 const mainContainer = document.querySelector("#mainContainer");
 const addTask = document.querySelector("#addTask");
-const modifyButton = document.querySelector("#modifyButton");
+
+let currentMode;
+let target;
 
 addButton.addEventListener("click", () => {
   addDialog.classList.add("visibility");
   overlay.classList.add("overlay");
+  currentMode = "add";
 });
 
 mainContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("removeButton")) {
     e.target.parentElement.parentElement.remove();
+  }
+  if (e.target.classList.contains("modifyButton")) {
+    addDialog.classList.add("visibility");
+    overlay.classList.add("overlay");
+    target = e.target;
+    currentMode = "modify";
   }
 });
 
@@ -37,7 +46,13 @@ formAddButton.addEventListener("click", (e) => {
           Modify</button>
         </div>
   `;
-  mainContainer.insertBefore(div, addTask);
+  if (currentMode === "add") {
+    mainContainer.insertBefore(div, addTask);
+  }
+  if (currentMode === "modify") {
+    mainContainer.insertBefore(div, target.parentElement.parentElement);
+    target.parentElement.parentElement.remove();
+  }
   addDialog.classList.remove("visibility");
   overlay.classList.remove("overlay");
   dialogTask.value = "";
