@@ -141,3 +141,11 @@ select {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 5;
 }
+form p {
+  color: #ef4444;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  text-align: center;
+  text-wrap: wrap;
+  width: 360px;
+}

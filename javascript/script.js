@@ -38,9 +38,15 @@ mainContainer.addEventListener("click", (e) => {
 
 formAddButton.addEventListener("click", (e) => {
   e.preventDefault();
-  const div = document.createElement("div");
-  div.className = "taskContainer";
-  div.innerHTML = `
+  if (
+    Number.isInteger(Number(dialogTime.value)) &&
+    dialogTime.value <= 12 &&
+    dialogTime.value >= 1
+  ) {
+    if (!Number(dialogTask.value) && dialogTask.value.length >= 1) {
+      const div = document.createElement("div");
+      div.className = "taskContainer";
+      div.innerHTML = `
         <div id="task">
           <h3>${dialogTask.value}</h3>
           <p>${dialogTime.value}${dialogPeriod.value}</p>
@@ -52,17 +58,33 @@ formAddButton.addEventListener("click", (e) => {
           Modify</button>
         </div>
   `;
-  if (currentMode === "add") {
-    mainContainer.insertBefore(div, addTask);
+      if (currentMode === "add") {
+        mainContainer.insertBefore(div, addTask);
+      }
+      if (currentMode === "modify") {
+        mainContainer.insertBefore(div, target.parentElement.parentElement);
+        target.parentElement.parentElement.remove();
+      }
+      addDialog.classList.remove("visibility");
+      overlay.classList.remove("overlay");
+      dialogTask.value = "";
+      dialogTime.value = "";
+    } else {
+      let p = document.createElement("p");
+      p.textContent = "The task must include one letter at least";
+      addDialog.appendChild(p);
+      setTimeout(() => {
+        addDialog.removeChild(p);
+      }, 3000);
+    }
+  } else {
+    let p = document.createElement("p");
+    p.textContent = "The time must be a number between 1 and 12 (inclusive)";
+    addDialog.appendChild(p);
+    setTimeout(() => {
+      addDialog.removeChild(p);
+    }, 3000);
   }
-  if (currentMode === "modify") {
-    mainContainer.insertBefore(div, target.parentElement.parentElement);
-    target.parentElement.parentElement.remove();
-  }
-  addDialog.classList.remove("visibility");
-  overlay.classList.remove("overlay");
-  dialogTask.value = "";
-  dialogTime.value = "";
 });
 
 formRemoveButton.addEventListener("click", (e) => {
