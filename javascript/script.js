@@ -70,6 +70,10 @@ formAddButton.addEventListener("click", (e) => {
       dialogTask.value = "";
       dialogTime.value = "";
     } else {
+      const child = addDialog.querySelector("p");
+      if (child) {
+        child.remove();
+      }
       let p = document.createElement("p");
       p.textContent = "The task must include one letter at least";
       addDialog.appendChild(p);
@@ -78,6 +82,10 @@ formAddButton.addEventListener("click", (e) => {
       }, 3000);
     }
   } else {
+    const child = addDialog.querySelector("p");
+    if (child) {
+      child.remove();
+    }
     let p = document.createElement("p");
     p.textContent = "The time must be a number between 1 and 12 (inclusive)";
     addDialog.appendChild(p);

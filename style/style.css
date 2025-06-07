@@ -149,3 +149,29 @@ form p {
   text-wrap: wrap;
   width: 360px;
 }
+@media (width<=850px) {
+  #addDialog {
+    left: 19%;
+    right: 19%;
+    justify-self: center;
+    text-align: center;
+  }
+}
+@media (width<=465px) {
+  .taskContainer {
+    grid-template-columns: 1fr;
+  }
+  #buttons {
+    justify-self: center;
+  }
+}
+@media (width<=420px) {
+  #date {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  #exactDate {
+    justify-self: center;
+    margin-right: 0;
+  }
+}
