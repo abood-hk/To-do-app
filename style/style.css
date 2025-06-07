@@ -118,11 +118,12 @@ select {
 #addDialog {
   display: none;
   position: absolute;
-  top: 34%;
-  left: 24%;
+  top: 47%;
+  left: 50%;
   background-color: #1a1a1a;
   padding: 78px 42px;
   z-index: 10;
+  transform: translate(-50%, -50%);
 }
 #addDialog.visibility {
   display: block;
@@ -151,8 +152,6 @@ form p {
 }
 @media (width<=850px) {
   #addDialog {
-    left: 19%;
-    right: 19%;
     justify-self: center;
     text-align: center;
   }
